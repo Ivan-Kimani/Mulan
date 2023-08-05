@@ -27,6 +27,9 @@ z-index: 100;
 
 header .logo img{
 max-width: 150px;
+opacity: 0;
+animation: slideTop 1s ease forwards;
+animation-delay: 1s;
 }
 
 .navigation{
@@ -43,7 +46,10 @@ margin: 0 10px;
  color: #fff;
  text-decoration: none;
  font-weight: 600;
- letter-spacing: 1px;   
+ letter-spacing: 1px; 
+ opacity: 0;
+ animation: slideTop .5s ease forwards;
+ animation-delay: calc(.2s * var(--i));  
 }
 
 .navigation li:hover a{
@@ -54,6 +60,9 @@ color: #de0611;
 position: relative;
 width: 300px;
 height: 40px;
+opacity: 0;
+animation: slideRight 1s ease forwards;
+animation-delay: 1s;
 }
 
 .search input{
@@ -69,6 +78,8 @@ outline: none;
 border-radius:4px ;
 padding: 0 10px 0 45px;
 backdrop-filter: blur(10px);
+
+
 }
 
 .search input::placeholder{
@@ -94,6 +105,7 @@ display: flex;
 justify-content: flex-start;
 align-items: center;
 
+
 }
 
 .banner .bg{
@@ -103,6 +115,9 @@ left: 0;
 width: 100%;
 height: 100%;
 object-fit: cover;
+opacity: 0;
+animation: slideBottom 1s ease forwards;
+animation-delay: 2s;
 
 }
 
@@ -115,11 +130,17 @@ max-width: 550px;
 
 .content .title{
   max-width: 250px;
+  opacity: 0;
+animation: slideRight 1s ease forwards;
+animation-delay: 1s;
 }
 
 .banner .content h4{
   color: rgba(255, 255, 255, 0.5);
   font-weight: 500;
+  opacity: 0;
+animation: slideTop 1s ease forwards;
+animation-delay: 1s;
 }
 
 .banner .content h4 span{
@@ -150,6 +171,9 @@ max-width: 550px;
   line-height: 1.5em;
   color: #fff;
   margin:10px 0 20px ;
+  opacity: 0;
+animation: slideLeft 1s ease forwards;
+animation-delay: 2s;
 }
 
 .banner .content .buttons{
@@ -167,6 +191,9 @@ max-width: 550px;
     font-weight: 500;
     letter-spacing: 1px;
     text-transform: uppercase;
+    opacity: 0;
+animation: slideRight 1s ease forwards;
+animation-delay: 1s;
 
 }
 
@@ -198,6 +225,9 @@ cursor: pointer;
 .play img{
  margin-right: 10px;
  max-width: 50px; 
+ opacity: 0;
+animation: slideLeft 1s ease forwards;
+animation-delay: 1s;
 }
 
 .trailer{
@@ -289,4 +319,47 @@ flex-direction: column;
   }
 }
 
+/* animation*/
+@keyframes slideRight{
+  0%{
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100%{
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 
+@keyframes slideTop{
+  0%{
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100%{
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideBottom{
+  0%{
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100%{
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideLeft{
+  0%{
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100%{
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
